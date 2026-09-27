@@ -1,10 +1,20 @@
 [project]
-name = "fastapi-ledger-node-python"
+name = "fastapi-ledger-node"
 version = "0.1.0"
 requires-python = ">=3.14.4"
 dependencies = [
     "fastapi[standard]>=0.141.1",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+addopts = "-v -rA -s"
+testpaths = ["tests"]
+pythonpath = ["."]
 
 [[tool.uv.index]]
 url = "https://mirrors.aliyun.com/pypi/simple/"
